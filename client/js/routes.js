@@ -3,7 +3,7 @@
  */
 Router.configure({
   layoutTemplate: "baseLayout",
-  notFoundTemplate: "baseLayout",
+  notFoundTemplate: "404",
   loadingTemplate: "baseLayout"
 });
 
