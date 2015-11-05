@@ -3,9 +3,6 @@ User = function(doc) {
 }
 
 _.extend(User.prototype, {
-  fetchAttendences: function() {
-    return this.profile.attendences;
-  },
   addAttendence: function() {
     Meteor.users.update(this._id, {$inc: {"profile.attendences": 1}});
   }
