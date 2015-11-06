@@ -18,7 +18,11 @@ Router.route("/", function() {
   this.render("home");
 });
 Router.route("/signin", function() {
-  this.render("attendence");
+  if(Meteor.userId()) {
+    this.render("attendence");
+  } else {
+    this.redirect("/");
+  }
 });
 Router.route("/user/:username", function() {
   var user = Meteor.users.findOne({username: this.params.username});

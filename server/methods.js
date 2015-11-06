@@ -1,3 +1,1 @@
-Meteor.methods({
-  attend: Methods.attend
-});
+Meteor.methods(Methods);
