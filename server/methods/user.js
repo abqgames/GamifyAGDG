@@ -5,11 +5,3 @@ Methods["user.attend"] = function() {
   console.log("failed");
   throw new Meteor.Error("Attendence failed");
 };
-
-/*
- * Unused
- */
-Methods["user.getExperience"] = function(userId) {
-  var user = Meteor.users.findOne({_id: userId});
-  return user.getExperience();
-};
