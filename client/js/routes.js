@@ -24,6 +24,9 @@ Router.route("/signin", function() {
     this.redirect("/");
   }
 });
+Router.route("/signinalt", function() {
+    this.render("signinalt");
+});
 Router.route("/user/:username", function() {
   var user = Meteor.users.findOne({username: this.params.username});
   if(!user) {
