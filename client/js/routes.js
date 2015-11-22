@@ -8,7 +8,7 @@ Router.configure({
 });
 
 Accounts.ui.config({
-  passwordSignupFields: "USERNAME_ONLY"
+  passwordSignupFields: "USERNAME_AND_EMAIL"
 });
 
 /*
@@ -25,7 +25,13 @@ Router.route("/signin", function() {
   }
 });
 Router.route("/signinalt", function() {
-    this.render("signinalt");
+  this.render("signinalt");
+});
+Router.route("/account", function() {
+  if(Meteor.userId())
+    this.render("account");
+  else
+    this.redirect("/");
 });
 Router.route("/user/:username", function() {
   var user = Meteor.users.findOne({username: this.params.username});

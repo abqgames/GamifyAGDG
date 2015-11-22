@@ -46,6 +46,18 @@ _.extend(User.prototype, {
     console.log("experience: " + total);
     Meteor.users.update(this._id, {$set: {"profile.experience": total}});
     return total;
+  },
+  /*
+   * Changes the user's real name
+   */
+  updateName: function(name) {
+    console.log(name);
+    if(name.first) {
+      Meteor.users.update({_id: Meteor.userId()}, {$set: {"profile.firstName": name.first}});
+    }
+    if(name.last) {
+      Meteor.users.update({_id: Meteor.userId()}, {$set: {"profile.lastName": name.last}});
+    }
   }
 });
 

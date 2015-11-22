@@ -1,0 +1,19 @@
+<template name="account">
+  {{#if currentUser.profile.firstName}}
+  <h1>Hello, {{currentUser.profile.firstName}} {{currentUser.profile.lastName}}!</h1>
+  {{else}}
+  <h1>Hello, {{currentUser.username}}!</h1>
+  {{/if}}
+  <form id="updateName">
+    <!-- TODO: if a user has a name, make it fill in value not placeholder -->
+    <input id="firstName" type="text" placeholder="{{getName 'first'}}"/>
+    <input id="lastName" type="text" placeholder="{{getName 'last'}}"/>
+    <input type="submit"/>
+  </form>
+  <form name="passwordChange">
+    <h3>Change Password(doesn't work)</h3>
+    <input type="password" placeholder="Old Password"/>
+    <input type="password" placeholder="New Password"/>
+    <input type="password" placeholder="Confirm"/>
+  </form>
+</template>
