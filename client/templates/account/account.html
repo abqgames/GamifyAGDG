@@ -1,9 +1,5 @@
 <template name="account">
-  {{#if currentUser.profile.firstName}}
-  <h1>Hello, {{currentUser.profile.firstName}} {{currentUser.profile.lastName}}!</h1>
-  {{else}}
-  <h1>Hello, {{currentUser.username}}!</h1>
-  {{/if}}
+  <h1>Hello, {{> realName}}!</h1>
   <form id="updateName">
     <!-- TODO: if a user has a name, make it fill in value not placeholder -->
     <input id="firstName" type="text" placeholder="{{getName 'first'}}"/>

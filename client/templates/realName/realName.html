@@ -1,0 +1,7 @@
+<template name="realName">
+  {{#if currentUser.profile.firstName}}
+    {{currentUser.profile.firstName}} {{currentUser.profile.lastName}} ({{currentUser.username}})
+  {{else}}
+    {{currentUser.username}}
+  {{/if}}
+</template>
