@@ -19,7 +19,7 @@ Router.route("/", function() {
 });
 Router.route("/signin", function() {
   if(Meteor.userId()) {
-    this.render("attendence");
+    this.render("attendance");
   } else {
     this.redirect("/");
   }

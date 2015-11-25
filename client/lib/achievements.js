@@ -11,4 +11,10 @@ Achievements = [
       attendences: 10
     }
   }, 
+  {
+    name: "Thirty One!",
+    criteria: {
+      attendences: 31
+    }
+  }, 
 ]
