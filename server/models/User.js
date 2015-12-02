@@ -11,26 +11,20 @@ _.extend(User.prototype, {
    * Add 1 attendence to the user
    * Can only be called once every 6 days
    */
-  addAttendence: function() {
+  addAttendence: function(options) {
+    console.log("tried to add");
     /*
      * REMOVED FOR DEVELOPMENT 
      * XXX: Add back later
      * var daysElapsed = (new Date() - this.profile.lastAttendence)/(1000*60*60*24);
      */
     var daysElapsed = 7;
-    if(daysElapsed > 6) {
+    if((options.force && Meteor.user().profile.isAdmin) || daysElapsed > 6) {
       Meteor.users.update(this._id, {
         $inc: {"profile.attendences": 1},
         $currentDate: {"profile.lastAttendence": true}
       });
-      /*
-       * XXX: This is a messy way of doing this. Is it possible to keep the
-       * ram version of the user in sync elegantly?
-       */
       this.profile = Meteor.users.findOne(this._id).profile;
-      /*
-       * End messy
-       */
       this.calculateExperience();
       return true;
     }
@@ -38,7 +32,6 @@ _.extend(User.prototype, {
   },
   /*
    * Calculates the user's experience and returns it as an integer
-   * (unused)
    */
   calculateExperience: function() {
     var total = 0;
@@ -58,6 +51,12 @@ _.extend(User.prototype, {
     if(name.last) {
       Meteor.users.update({_id: Meteor.userId()}, {$set: {"profile.lastName": name.last}});
     }
+  },
+  /*
+   * Reset the user's attendences
+   */
+  resetAttendence: function() {
+    throw new Meteor.Error("Function not yet written");
   }
 });
 

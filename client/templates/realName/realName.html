@@ -1,7 +1,7 @@
 <template name="realName">
-  {{#if currentUser.profile.firstName}}
-    {{currentUser.profile.firstName}} {{currentUser.profile.lastName}} ({{currentUser.username}})
+  {{#if user.profile.firstName}}
+    {{user.profile.firstName}} {{user.profile.lastName}} ({{user.username}})
   {{else}}
-    {{currentUser.username}}
+    {{user.username}}
   {{/if}}
 </template>

@@ -1,6 +1,6 @@
-Methods["user.attend"] = function(options) { 
-  var user = Meteor.users.findOne({username: options.username});
-  if(user.addAttendence(options))
+Methods["user.reset.attendence"] = function() { 
+  var user = Meteor.user();
+  if(user.addAttendence(user._id))
     return {result: "success"};
   throw new Meteor.Error("Attendence failed");
 };

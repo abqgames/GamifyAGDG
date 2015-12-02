@@ -1,5 +1,5 @@
 <template name="account">
-  <h1>Hello, {{> realName}}!</h1>
+  <h1>Hello, {{> realName user=currentUser}}!</h1>
   <form id="updateName">
     <!-- TODO: if a user has a name, make it fill in value not placeholder -->
     <input id="firstName" type="text" placeholder="{{getName 'first'}}"/>

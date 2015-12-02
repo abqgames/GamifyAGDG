@@ -47,3 +47,9 @@ Router.route("/user/:username", function() {
     });
   }
 });
+Router.route("/admin", function() {
+  if(Meteor.user().profile.isAdmin == true)
+    this.render("admin");
+  else
+    this.redirect("/");
+});
