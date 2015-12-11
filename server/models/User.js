@@ -24,6 +24,7 @@ _.extend(User.prototype, {
         $inc: {"profile.attendances": 1},
         $currentDate: {"profile.lastAttendance": true}
       });
+      Attendance.attend(this._id);
       this.profile = Meteor.users.findOne(this._id).profile;
       this.calculateExperience();
       return true;
@@ -35,8 +36,8 @@ _.extend(User.prototype, {
    */
   calculateExperience: function() {
     var total = 0;
-    total += this.profile.attendances * 50;
-    console.log("experience: " + total);
+    //total += this.profile.attendances * 50;
+    total += Attendances.find({userId: this._id}).count() * 50;
     Meteor.users.update(this._id, {$set: {"profile.experience": total}});
     return total;
   },
@@ -44,7 +45,6 @@ _.extend(User.prototype, {
    * Changes the user's real name
    */
   updateName: function(name) {
-    console.log(name);
     if(name.first) {
       Meteor.users.update({_id: Meteor.userId()}, {$set: {"profile.firstName": name.first}});
     }
