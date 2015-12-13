@@ -1,10 +1,16 @@
 <template name="userProfile">
   <h3>{{> realName user=user}}</h3>
-  <p>Attendances: {{user.profile.attendances}}</p>
+  
+  <p class="attendances">Attendances: {{user.profile.attendances}}</p>
   <p>Experience: {{user.profile.experience}}</p>
   {{> achievements user=user}}
   {{#if isAdmin}}
   <a id="addAttendance" data-username="{{user.username}}"  href="#">Add Attendance</a>
   {{/if}}
+  <script>
+  	var blueMultiplier = {{user.profile.attendances}} * 5,
+  	widthOffset = {{user.profile.attendances}} + 150;
+  	$('p.attendances').css({'border-right' : '{{user.profile.attendances}}px solid rgb(255, 54, ' + blueMultiplier + ')', 'width' : widthOffset});
+  </script>
 </template>
 
