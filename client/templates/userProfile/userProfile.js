@@ -1,5 +1,5 @@
 Template.userProfile.helpers({
-
+	
 });
 Template.userProfile.events({
   "click #addAttendance": function(e) {

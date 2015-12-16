@@ -7,10 +7,5 @@
   {{#if isAdmin}}
   <a id="addAttendance" data-username="{{user.username}}"  href="#">Add Attendance</a>
   {{/if}}
-  <script>
-  	var blueMultiplier = {{user.profile.attendances}} * 5,
-  	widthOffset = {{user.profile.attendances}} + 150;
-  	$('p.attendances').css({'border-right' : '{{user.profile.attendances}}px solid rgb(255, 54, ' + blueMultiplier + ')', 'width' : widthOffset});
-  </script>
 </template>
 

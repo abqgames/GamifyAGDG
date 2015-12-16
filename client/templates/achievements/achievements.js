@@ -1,4 +1,10 @@
 Template.achievements.helpers({
+  blueNumber : function() {
+      var blueMultiplier = {{user.profile.attendances}} * 5,
+      widthOffset = {{user.profile.attendances}} + 150;
+      $('p.attendances').css({'border-right' : '{{user.profile.attendances}}px solid rgb(255, 54, ' + blueMultiplier + ')', 'width' : widthOffset});
+    // return 100;
+  },
   achievements:  function(user) {
     var output = [];
     if(user.profile == undefined) return output;
