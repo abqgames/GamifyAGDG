@@ -1,9 +1,7 @@
 Template.achievements.helpers({
-  blueNumber : function() {
-      var blueMultiplier = {{user.profile.attendances}} * 5,
-      widthOffset = {{user.profile.attendances}} + 150;
-      $('p.attendances').css({'border-right' : '{{user.profile.attendances}}px solid rgb(255, 54, ' + blueMultiplier + ')', 'width' : widthOffset});
-    // return 100;
+  borderStyle: function(user) {
+    var attendances = 50;
+    return "border-right: " + attendances + "px solid red;";
   },
   achievements:  function(user) {
     var output = [];
