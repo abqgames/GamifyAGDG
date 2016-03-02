@@ -1,7 +1,9 @@
 <template name="achievements">
-  <ul>
-    {{#each achievements user}}
-      <li style="{{borderStyle}}">{{name}}</li>
-    {{/each}}
-  </ul>
+  <div id="achievements">
+    <ul>
+      {{#each achievements user}}
+        <li style="{{borderStyle}}{{blueNumber}}">{{name}}</li>
+      {{/each}}
+    </ul>
+  </div>
 </template>

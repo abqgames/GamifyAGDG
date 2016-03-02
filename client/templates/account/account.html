@@ -1,15 +1,17 @@
 <template name="account">
-  <h1>Hello, {{> realName user=currentUser}}!</h1>
-  <form id="updateName">
-    <!-- TODO: if a user has a name, make it fill in value not placeholder -->
-    <input id="firstName" type="text" placeholder="{{getName 'first'}}"/>
-    <input id="lastName" type="text" placeholder="{{getName 'last'}}"/>
-    <input type="submit"/>
-  </form>
-  <form name="passwordChange">
-    <h3>Change Password(doesn't work)</h3>
-    <input type="password" placeholder="Old Password"/>
-    <input type="password" placeholder="New Password"/>
-    <input type="password" placeholder="Confirm"/>
-  </form>
+  <div id="account">
+    <h1>Hello, {{> realName user=currentUser}}!</h1>
+    <form id="updateName">
+      <!-- TODO: if a user has a name, make it fill in value not placeholder -->
+      <input id="firstName" type="text" placeholder="{{getName 'first'}}"/>
+      <input id="lastName" type="text" placeholder="{{getName 'last'}}"/>
+      <input type="submit"/>
+    </form>
+    <form name="passwordChange">
+      <h3>Change Password(doesn't work)</h3>
+      <input type="password" placeholder="Old Password"/>
+      <input type="password" placeholder="New Password"/>
+      <input type="password" placeholder="Confirm"/>
+    </form>
+  </div> 
 </template>

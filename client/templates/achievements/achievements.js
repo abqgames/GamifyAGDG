@@ -3,6 +3,11 @@ Template.achievements.helpers({
     var attendances = 50;
     return "border-right: " + attendances + "px solid red;";
   },
+  blueColor : function(user) {
+    var attendances = user.profile.attendances;
+    var blueWithMultiplier = attendances * 5;
+    return "border-color: rgb(255, 54, " + blueWithMultiplier + ")";
+  },
   achievements:  function(user) {
     var output = [];
     if(user.profile == undefined) return output;

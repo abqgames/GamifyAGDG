@@ -5,11 +5,21 @@
 #login-dropdown-list {
 }
 
-.dropdown-menu {
-  position: static;
-  width: 350px;
-  margin: 0 auto;
-  display: block;
-  height: 170px;
-  float: none;
+#signin {
+  li#login-dropdown-list {
+      list-style-type: none;
+      width: 350px;
+      margin: 0 auto;
+  }
+  a.dropdown-toggle {
+    display: none;
+  }
+  div.dropdown-menu {
+    position: static;
+    width: 350px;
+    margin: 0 auto;
+    display: block;
+    /*height: 170px;*/
+    float: left;
+  }
 }

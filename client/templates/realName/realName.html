@@ -1,7 +1,9 @@
 <template name="realName">
-  {{#if user.profile.firstName}}
-    {{user.profile.firstName}} {{user.profile.lastName}} ({{user.username}})
-  {{else}}
-    {{user.username}}
-  {{/if}}
+  <div id="realName">
+    {{#if user.profile.firstName}}
+      {{user.profile.firstName}} {{user.profile.lastName}} ({{user.username}})
+    {{else}}
+      {{user.username}}
+    {{/if}}
+  </div>
 </template>

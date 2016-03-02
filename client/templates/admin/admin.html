@@ -1,9 +1,11 @@
 <template name="admin">
-  <ol>
-    {{#each users}}
-      <li>
-        <a href="/user/{{username}}">{{username}}</a>
-      </li>
-    {{/each}}
-  </ol>
+  <div id="admin">
+    <ol>
+      {{#each users}}
+        <li>
+          <a href="/user/{{username}}">{{username}}</a>
+        </li>
+      {{/each}}
+    </ol>
+  </div>
 </template>
