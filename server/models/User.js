@@ -12,13 +12,7 @@ _.extend(User.prototype, {
    * Can only be called once every 6 days
    */
   addAttendance: function(options) {
-    console.log("tried to add");
-    /*
-     * REMOVED FOR DEVELOPMENT 
-     * XXX: Add back later
-     * var daysElapsed = (new Date() - this.profile.lastAttendance)/(1000*60*60*24);
-     */
-    var daysElapsed = 7;
+    var daysElapsed = (new Date() - this.profile.lastAttendance)/(1000*60*60*24);
     if((options.force && Meteor.user().profile.isAdmin) || daysElapsed > 6) {
       Meteor.users.update(this._id, {
         $inc: {"profile.attendances": 1},
